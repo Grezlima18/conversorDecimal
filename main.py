@@ -5,7 +5,7 @@ numeroInformado = int(input("Informe um número inteiro para converter-lo em bit
 numeroBinario = []
 
 
-def decimalParaBinario(x,y):
+def dec2bin(x,y):
     while x > 0:
         p, q = divmod(x, 2)
         x = p
@@ -14,7 +14,7 @@ def decimalParaBinario(x,y):
     return(y)
 
 
-def listaParaInteiros(s):
+def list2int(s):
     v = []
     for g in range(0, len(s)):
         x = str(s[g])
@@ -25,6 +25,6 @@ def listaParaInteiros(s):
         str1 += ele
     return str1
 
-decimalParaBinario(numeroInformado, numeroBinario)
+dec2bin(numeroInformado, numeroBinario)
 
-print("Seu número em binário é", listaParaInteiros(numeroBinario))
+print("Seu número em binário é", list2int(numeroBinario))
