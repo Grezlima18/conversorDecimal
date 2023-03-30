@@ -2,18 +2,29 @@
 ## 1133554 - Vitor Almeida Machado
 
 numeroInformado = int(input("Informe um número inteiro para converter-lo em bit: "))
-numeroBinario = [1]
+numeroBinario = []
 
-def dec2bin(x):
-    s = []
-    while x > 1:
+
+def decimalParaBinario(x,y):
+    while x > 0:
         p, q = divmod(x, 2)
         x = p
-        numeroBinario.append(q)
-    for val in numeroBinario:
-        s.append(str(val))
-    y = ''.join(s)
-    return y
+        y.append(q)
+    y.reverse()
+    return(y)
 
 
-print("Seu número em binário é", dec2bin(numeroInformado))
+def listaParaInteiros(s):
+    v = []
+    for g in range(0, len(s)):
+        x = str(s[g])
+        v.append(x)
+    
+    str1 = ""  
+    for ele in v:
+        str1 += ele
+    return str1
+
+decimalParaBinario(numeroInformado, numeroBinario)
+
+print("Seu número em binário é", listaParaInteiros(numeroBinario))
